@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Number</th>
+      <th>Profession</th>
+      <th>College</th>
+      <th>Branch</th>
+      <th>Suggestions</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wdtmzs.each do |wdtmz| %>
+      <tr>
+        <td><%= wdtmz.id %></td>
+        <td><%= wdtmz.title %></td>
+        <td><%= wdtmz.name %></td>
+        <td><%= wdtmz.email %></td>
+        <td><%= wdtmz.number %></td>
+        <td><%= wdtmz.profession %></td>
+        <td><%= wdtmz.college %></td>
+        <td><%= wdtmz.branch %></td>
+        <td><%= wdtmz.suggestions %></td>
+        <td><%= button_to 'Send WhatsApp', "https://wa.me/91#{wdtmz.number}/?text=Dear+#{wdtmz.title}+#{wdtmz.name}%2C%0D%0AThank+you+for+submitting+your+response+for+Cloud+Computing+Webinar.%0D%0A%0D%0ATo+get+latest+updates+regarding+the+webinar%2C+please+join+our+WhatsApp+Group+%3A%0D%0Ahttps%3A%2F%2Fbit.ly%2Fwajoincncloud%0D%0A%0D%0ATo+join+the+meeting+on+13th+June+2020+at+5pm%2C+please+use+this+Google+Meet+Link%3A%0D%0Ahttps%3A%2F%2Fmeet.google.com%2Fhid-zarx-zmx%0D%0A%0D%0AFor+any+queries%2C+contact+us%3A%0D%0AVaibhav+Said%3A+%2B918369888377%0D%0A%0D%0AThis+is+a+system-generated+message%2C+you+can+reply+to+this+number+too.", form: {target: '_blank'} %></td>
+	<td><%= button_to 'Send Reminder',myemail_path(wdtmz.id) %></td>
+        <!--<td><%= link_to 'Show', wdtmz %></td>-->
+        <td><%= link_to 'Edit', edit_wdtmz_path(wdtmz) %></td>
+        <td><%= link_to 'Destroy', wdtmz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Submit new response', new_wdtmz_path %>

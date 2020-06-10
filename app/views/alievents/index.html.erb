@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registered Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Number</th>
+      <th>Company</th>
+      <th>Branch</th>
+      <th>Suggestions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alievents.each do |alievent| %>
+      <tr>
+        <td><%= alievent.id %></td>
+        <td><%= alievent.name %></td>
+        <td><%= alievent.email %></td>
+        <td><%= alievent.number %></td>
+        <td><%= alievent.company %></td>
+        <td><%= alievent.branch %></td>
+        <td><%= alievent.suggestions %></td>
+        <td><%= button_to 'Send WhatsApp', "https://www.google.com" , form: {target: '_blank'} %></td> 
+        <!--<td><%= link_to 'Show', alievent %></td>-->
+        <td><%= link_to 'Edit', edit_alievent_path(alievent) %></td>
+        <td><%= link_to 'Destroy', alievent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create User', new_alievent_path %>

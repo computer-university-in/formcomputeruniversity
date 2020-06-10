@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @alievent.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @alievent.email %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @alievent.number %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @alievent.company %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @alievent.branch %>
+</p>
+
+<p>
+  <strong>Suggestions:</strong>
+  <%= @alievent.suggestions %>
+</p>
+
+<%= link_to 'Edit', edit_alievent_path(@alievent) %> |
+<%= link_to 'Back', alievents_path %>

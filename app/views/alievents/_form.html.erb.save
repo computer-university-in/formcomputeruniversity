@@ -1,0 +1,43 @@
+<%= form_with(model: alievent, local: true) do |form| %>
+
+  <%if alievent.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <%= alievent.errors.full_messages.first %>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, 'Full Name' %>
+    <%= form.text_field :name, class: 'form-control', autofocus: true, placeholder: 'Full name',:required => 'required'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'example@email.com',:required => 'required' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number, 'Whatsapp Number' %>
+    <%= form.text_field :number, class: 'form-control', placeholder: '10-digit Number', :required => 'required' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company,'University/Company' %>
+    <%= form.text_field :company, class: 'form-control', placeholder: 'University/Company Name' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :branch, 'Branch (Only for Students/Faculty)'%>
+    <%= form.text_field :branch, class: 'form-control', placeholder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :suggestions %>
+    <%= form.text_field :suggestions, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit Form',class: 'btn btn-success' %>
+  </div>
+<% end %>

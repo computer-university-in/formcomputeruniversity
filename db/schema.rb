@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_24_003029) do
+ActiveRecord::Schema.define(version: 2020_06_04_061037) do
 
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2020_05_24_003029) do
     t.index ["recipient_type", "recipient_id"], name: "index_activities_on_recipient_type_and_recipient_id"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
     t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
+  end
+
+  create_table "alievents", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "number"
+    t.string "company"
+    t.string "branch"
+    t.string "suggestions"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "badges_sashes", force: :cascade do |t|
@@ -205,6 +216,19 @@ ActiveRecord::Schema.define(version: 2020_05_24_003029) do
     t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
+  end
+
+  create_table "wdtmzs", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.string "email"
+    t.string "number"
+    t.string "profession"
+    t.string "college"
+    t.string "branch"
+    t.string "suggestions"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

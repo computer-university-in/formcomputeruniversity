@@ -6,19 +6,43 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+#message {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 90%;	
+}
+
+  #inner-message {
+    position: fixed;
+    word-wrap: break-word;
+    margin-left: auto;
+    margin-right:auto;
+    marign-top:50%;
+  }
+    </style>
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <% unless notice.blank? %>
-      <div class="alert alert-info alert-dismissable alert-fixed">
-        <%= notice %>
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <div id="message">
+        <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-info alert-dismissable alert-fixed" style="marign:auto">
+            <%= notice %>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          </div>
+        </div>
       </div>
     <% end %>
     <% unless alert.blank? %>
-      <div class="alert alert-danger alert-dismissable alert-fixed">
-        <%= alert %>
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <div id="message">
+        <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-danger alert-dismissable alert-fixed" style="marign:auto">
+            <%= alert %>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          </div>
+        </div>
       </div>
     <% end %>
     <div class="container">

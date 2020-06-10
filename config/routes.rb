@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :mes
+  resources :wdtmzs
+  resources :alievents
   resources :posts
   resources :comments, only: [:create, :destroy]
   devise_for :users
@@ -22,8 +23,10 @@ Rails.application.routes.draw do
   
   root 'home#front'
   
-  get '/mes/new' => 'mes#new'
-  get '/registered' => 'mes#registered'
+  get '/alievents/new' => 'alievents#new'
+  get '/registered' => 'alievents#registered'
+
+  get '/registered' => 'wdtmzs#registered'
 
   match :follow, to: 'follows#create', as: :follow, via: :post
   match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
@@ -89,4 +92,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  post 'wdtmzs/myemail/:id' => 'wdtmzs#myemail', as: :myemail
+  post 'wdtmzs/mywhatsapp/:id' => 'wdtmzs#mywhatsapp', as: :mywhatsapp
 end
