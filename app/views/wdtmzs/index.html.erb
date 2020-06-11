@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th>WhatsApp</th>
       <th>Title</th>
       <th>Name</th>
       <th>Email</th>
@@ -19,9 +20,9 @@
   </thead>
 
   <tbody>
-    <% @wdtmzs.each do |wdtmz| %>
+    <% @wdtmzs.each_with_index do |wdtmz,i| %>
       <tr>
-        <td><%= wdtmz.id %></td>
+        <td><%= i+1 %></td>
         <td><%= wdtmz.title %></td>
         <td><%= wdtmz.name %></td>
         <td><%= wdtmz.email %></td>
