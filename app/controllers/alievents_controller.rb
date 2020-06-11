@@ -4,7 +4,7 @@ class AlieventsController < ApplicationController
 
   # GET /alievents
   def index
-    http_basic_authenticate_or_request_with :name => "sjchoure", :password => "pass"
+    http_basic_authenticate_or_request_with :name => "vaibhav", :password => "said"
     @alievents = Alievent.all
   end
 
