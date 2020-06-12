@@ -59,6 +59,7 @@ class WdtmzsController < ApplicationController
     user = Wdtmz.where(id: userid).first
     AlieventmailerMailer.welcome_email(user).deliver_later
     flash[:notice] = "Dear, your form was successfully submitted. Please check your email at for further instructions"
+    format.html { redirect_to(:action=>:index)}
   end
 
   def mywhatsapp
