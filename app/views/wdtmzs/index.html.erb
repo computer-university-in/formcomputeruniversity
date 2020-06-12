@@ -32,7 +32,8 @@
         <td><%= wdtmz.college %></td>
         <td><%= wdtmz.branch %></td>
         <td><%= wdtmz.suggestions %></td>
-	<td><%= button_to 'Send Reminder',myemail_path(wdtmz.id) %></td>
+	<td><%= button_to 'YouTube', "https://wa.me/91#{wdtmz.number}/?text=Dear%20#{wdtmz.title}.%20#{wdtmz.name}%2C%0D%0A%0D%0ALink%3A-%20https%3A%2F%2Fyoutu.be%2FE2yqv0ntjvw%0D%0ATeaser%20Promo%20Video%20for%20the%20Webinar%20titled%20as%20%22Start%20your%20Cloud%20Journey-%20Know%20the%20steps%22%20%F0%9F%94%A5%0D%0A%0D%0AThough%20this%20is%20a%20system-generated%20message%2C%20you%20can%20reply%20to%20this%20number%20for%20any%20queries.", form: {target: '_blank'} %></td>
+	<!--<td><%= button_to 'Send Reminder',myemail_path(wdtmz.id) %></td>-->
         <!--<td><%= link_to 'Show', wdtmz %></td>-->
         <td><%= link_to 'Edit', edit_wdtmz_path(wdtmz) %></td>
         <td><%= link_to 'Destroy', wdtmz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
