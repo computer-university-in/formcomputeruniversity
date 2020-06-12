@@ -58,7 +58,7 @@ class WdtmzsController < ApplicationController
     userid = params[:id]
     user = Wdtmz.where(id: userid).first
     AlieventmailerMailer.welcome_email(user).deliver_later
-    flash.alert = "Email Sent."
+    flash[:alert] = "User not found."
   end
 
   def mywhatsapp
