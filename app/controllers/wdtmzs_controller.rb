@@ -58,7 +58,7 @@ class WdtmzsController < ApplicationController
     userid = params[:id]
     user = Wdtmz.where(id: userid).first
     AlieventmailerMailer.welcome_email(user).deliver_later
-    flash[:notice] = "Dear, #{@wdtmz.name} your form was successfully submitted. Please check your email at #{@wdtmz.email} for further instructions"
+    flash[:notice] = "Dear, your form was successfully submitted. Please check your email at for further instructions"
   end
 
   def mywhatsapp
